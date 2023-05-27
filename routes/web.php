@@ -20,6 +20,14 @@ Route::get('/wordlists', function () {
     return view('frontend/wordlists');
 });
 
+// admin 
+Route::get('/createwordlist', function () {
+    return view('backend/createwordlist');
+});
+Route::get('/addword', function () {
+    return view('backend/addword');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
