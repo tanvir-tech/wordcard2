@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WordlistController;
+use App\Http\Controllers\WordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::post('/createwordlist', [WordlistController::class, 'createwordlist']);
 Route::get('/addword', function () {
     return view('backend/addword');
 });
+Route::post('/addword', [WordController::class, 'store']);
+
 
 Route::middleware([
     'auth:sanctum',

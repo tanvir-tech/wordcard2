@@ -30,7 +30,7 @@
         <div class="col-lg-5 m-4">
             <div class="card rounded">
                 <div class="card-body bg-info">
-                    <h1 class="text-light text-center">Category {{$wordlist['id']}} - {{$wordlist['name']}}</h1>
+                    <h1 class="text-light text-center">{{$wordlist['name']}}_{{$wordlist['id']}}</h1>
                 </div>
                 <div class="card-footer">
                     <p>

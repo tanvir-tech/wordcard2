@@ -8,7 +8,7 @@
                 </h1>
 
             </div>
-            {{-- @include('includes/flash-message') --}}
+            @include('includes/flash-message')
             
             <div class="card-body">
                 <form class="row" action="/addword" method="POST">
