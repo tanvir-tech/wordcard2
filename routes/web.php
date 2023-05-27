@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend/test');
+    return view('frontend/flashcard');
+});
+Route::get('/categories', function () {
+    return view('frontend/categorylist');
 });
 
 Route::middleware([

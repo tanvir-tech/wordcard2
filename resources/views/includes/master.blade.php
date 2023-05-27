@@ -10,7 +10,7 @@
 </head>
 <body style="background-color: #F7ECDE">
 
-        {{-- {{ View::make('includes/header') }} --}}
+        {{ View::make('includes/header') }}
         
         <div class="mt-5 pt-5">
             @yield('content')
