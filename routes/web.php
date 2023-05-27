@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WordlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend/flashcard');
 });
-Route::get('/wordlists', function () {
-    return view('frontend/wordlists');
-});
+Route::get('/wordlists', [WordlistController::class, 'index']);
 
 // admin 
 Route::get('/createwordlist', function () {
     return view('backend/createwordlist');
 });
+Route::post('/createwordlist', [WordlistController::class, 'createwordlist']);
+
 Route::get('/addword', function () {
     return view('backend/addword');
 });
