@@ -15,10 +15,11 @@ use App\Http\Controllers\WordController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend/flashcard');
-});
+
+Route::get('/',[WordlistController::class, 'index']);
 Route::get('/wordlists', [WordlistController::class, 'index']);
+
+
 
 // admin 
 Route::get('/createwordlist', function () {
@@ -32,12 +33,15 @@ Route::get('/addword', function () {
 Route::post('/addword', [WordController::class, 'store']);
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+
+//user
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+
+    Route::get('/dashboard', [WordlistController::class, 'index'])->name('dashboard');
+
+    //practice
+    Route::get('/practice', function () {
+        return view('frontend/flashcard');
+    });
+
 });

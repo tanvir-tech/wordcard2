@@ -13,13 +13,11 @@
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/wordlists">Wordlists</a>
+                    <a class="nav-link" href="/wordlists">Word List</a>
                 </li>
-                
+
+
             </ul>
-
-
-
             <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search a book" aria-label="Search"
                     name="query">
@@ -36,19 +34,30 @@
                             alt="{{ Auth::user()->name }}">
                     </button>
 
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger">
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="btn btn-danger">Logout</button>
-                        </form>
-                    </a>
+
+
+
+
+
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- item-->
+                        <a class="dropdown-item" href="/user/profile"><i
+                                class="bx bx-user font-size-16 align-middle me-1"></i>
+                            <span key="t-profile">Profile</span></a>
+
+
+                        <a class="dropdown-item text-danger">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Logout</button>
+                            </form>
+                        </a>
+                    </div>
+                @else
+                    {{-- logged out  --}}
+                    <a class="nav-link p-2" href="/login">Login</a>
+                @endif
             </div>
-        @else
-            {{-- logged out  --}}
-            <a class="nav-link p-2" href="/login">Login</a>
-            @endif
-        </div>
 
 
 
