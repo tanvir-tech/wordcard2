@@ -1,22 +1,41 @@
 @extends('includes/master')
 @section("content")
 
-<div class="m-5 p-5"></div>
+
 <div class="container mt-5">
+    <h1>All word lists are here </h1>
     <div class="row">
 
 
         {{-- card  --}}
-        <div class="col-lg-6">
+        <div class="col-lg-5 m-4">
             <div class="card rounded">
                 <div class="card-body bg-info">
-                    <h1 class="text-light text-center">Category 01</h1>
+                    <h1 class="text-light text-center">Wordlist 01</h1>
                 </div>
                 <div class="card-footer">
                     <p>
                         This category contains 50 words
                     </p>
-                    <a href="practice" class="btn btn-outline-light">
+                    <a href="practice" class="btn btn-outline-info">
+                        Let's practics -->
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        {{-- card end  --}}
+        {{-- card  --}}
+        <div class="col-lg-5 m-4">
+            <div class="card rounded">
+                <div class="card-body bg-info">
+                    <h1 class="text-light text-center">Wordlist 02</h1>
+                </div>
+                <div class="card-footer">
+                    <p>
+                        This category contains 50 words
+                    </p>
+                    <a href="practice" class="btn btn-outline-info">
                         Let's practics -->
                     </a>
                     

@@ -17,4 +17,4 @@
 <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
 
-<link rel="stylesheet" href="{{ asset('css/flashcard2.css') }}">
+<link rel="stylesheet" href="{{ asset('css/flashcard.css') }}">

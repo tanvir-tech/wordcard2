@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend/flashcard');
 });
-Route::get('/categories', function () {
-    return view('frontend/categorylist');
+Route::get('/wordlists', function () {
+    return view('frontend/wordlists');
 });
 
 Route::middleware([
