@@ -6,30 +6,42 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front p-5">
                     <div class="m-5">
-                        <h1>Front word</h1>
+                        <h1>{{$word[0]['word']}}</h1>
                         <p>Click to see the meaning</p>
                     </div>
                 </div>
                 <div class="flip-card-back p-4">
-                    <h1>Title Word</h1>
-                    <p>PoS : Meaning</p>
-                    <p>Example Sentence</p>
+                    <h1>{{$word[0]["word"]}}</h1>
+                    <p>{{$word[0]['PoS']}} : {{$word[0]['meaning']}}</p>
+                    <p>{{$word[0]['sentence']}}</p>
                 </div>
             </div>
 
         </div>
         {{-- flash-card end  --}}
         <br>
-        {{-- buttons  --}}
+        {{-- buttons start  --}}
         <div class="row">
             <div class="col">
-                <button class="btn btn-success btn-block">I knew this word</button>
+                <form action="/nextword">
+                    <input type="hidden" name="present_word_id" value="{{$word[0]["id"]}}">
+                    <input type="hidden" name="next_word_id" value="{{$word[1]["id"]}}">
+                    <input type="hidden" name="wordlist_id" value="{{$word[0]["wordlist_id"]}}">
+                    <input type="hidden" name="known" value="1">
+                    <button class="btn btn-success btn-block">I knew this word</button>
+                </form>
             </div>
             <div class="col">
-                <button class="btn btn-danger btn-block">I didn't know this word</button>
+                <form action="/nextword">
+                    <input type="hidden" name="present_word_id" value="{{$word[0]["id"]}}">
+                    <input type="hidden" name="next_word_id" value="{{$word[1]["id"]}}">
+                    <input type="hidden" name="wordlist_id" value="{{$word[0]["wordlist_id"]}}">
+                    <input type="hidden" name="known" value="0">
+                    <button class="btn btn-danger btn-block">I didn't know this word</button>
+                </form>
             </div>
         </div>
-        {{-- progress bars  --}}
+        {{-- progress bars start --}}
         <br>
 
         <label>Mastered: </label>

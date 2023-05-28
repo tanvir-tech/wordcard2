@@ -10,7 +10,7 @@
             </div>
 
 
-            @include('includes/flash-message')
+            {{-- @include('includes/flash-message') --}}
 
             <div class="card-body">
                 <form class="row" action="/createwordlist" method="POST">

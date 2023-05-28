@@ -11,7 +11,7 @@
 <body style="background-color: #F7ECDE">
 
         {{ View::make('includes/header') }}
-        
+        @include('includes/flash-message')
         <div class="mt-5 pt-5">
             @yield('content')
         </div>

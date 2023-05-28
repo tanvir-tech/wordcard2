@@ -43,5 +43,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/practice', function () {
         return view('frontend/flashcard');
     });
+    Route::get('/practice/{id}', [WordlistController::class, 'startwordlist']);
+    Route::get('/nextword', [WordlistController::class, 'nextword']);
 
 });
