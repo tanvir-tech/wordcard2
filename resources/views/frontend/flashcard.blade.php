@@ -12,7 +12,7 @@
                 </div>
                 <div class="flip-card-back p-4">
                     <h1>{{$word[0]["word"]}}</h1>
-                    <p>{{$word[0]['PoS']}} : {{$word[0]['meaning']}}</p>
+                    <p>{{$word[0]['pos']}} : {{$word[0]['meaning']}}</p>
                     <p>{{$word[0]['sentence']}}</p>
                 </div>
             </div>

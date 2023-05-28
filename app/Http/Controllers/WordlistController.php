@@ -89,7 +89,7 @@ class WordlistController extends Controller
 
 
         if($next_id==0){
-            return redirect('/wordlists')->with('error', 'End of the Wordlist');
+            return view('frontend/endpage',['wordlist_id'=>$wordlist_id] )->with('error', 'End of the Wordlist');
         }
         $word = Word::where('wordlist_id', '=',$wordlist_id)
                     ->where('id', '>=',$next_id)->take(2)->get();
