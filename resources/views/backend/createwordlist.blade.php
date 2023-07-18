@@ -13,23 +13,34 @@
             {{-- @include('includes/flash-message') --}}
 
             <div class="card-body">
-                <form class="row" action="/createwordlist" method="POST">
+                <form class="row" action="{{ route('file.import') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="col-md-6 p-4">
+                    {{-- <div class="col-md-6 p-4">
                         <label class="form-label">Wordlist name</label>
                         <input class="form-control" name="name">
                     </div>
 
-
+                    
 
                     <div class="col-md-6 p-4">
                         <label class="form-label">Wordlist Description</label>
                         <input class="form-control" name="description">
-                    </div>
+                    </div> --}}
 
                     <div class="col-md-6 p-4">
+                        <label class="form-label">Wordlists</label>
+                        <select class="form-control" name='wordlist_id'>
+                            @foreach($wordlists as $wordlist)
+                            <option value="{{ $wordlist->id }}">{{ $wordlist->name }}</option>
+                            @endforeach
+                        </select>
+                        
+                            
+                    </div>
+<br>
+                    <div class="col-md-6 p-4">
                         <label for="fileSelect">Spreadsheet</label>
-                        <input id="fileSelect" type="file" accept=".xlsx, .xls, .csv" />
+                        <input id="fileSelect" type="file" accept=".xlsx, .xls, .csv" name="excelfile"/>
                     </div>
 
                     <div class="col-md-4 p-4 m-2">

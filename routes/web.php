@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WordlistController;
 use App\Http\Controllers\WordController;
-
+use App\Models\Wordlist;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,9 +23,10 @@ Route::get('/wordlists', [WordlistController::class, 'index']);
 
 // admin 
 Route::get('/createwordlist', function () {
-    return view('backend/createwordlist');
+    $wordlists = Wordlist::all();
+    return view('backend/createwordlist', compact('wordlists'));
 });
-Route::post('/createwordlist', [WordlistController::class, 'createwordlist']);
+Route::post('/createwordlist', [WordlistController::class, 'createwordlist_fromexcel'])->name('file.import');
 
 Route::get('/addword', function () {
     return view('backend/addword');
@@ -47,3 +48,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/nextword', [WordlistController::class, 'nextword']);
 
 });
+
+
