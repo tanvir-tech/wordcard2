@@ -31,7 +31,7 @@ class WordlistController extends Controller
         
         $wordlist->save();
 
-        return redirect('/createwordlist')->with('success', 'Wordlist created successfully!');
+        return redirect('/newwordlist')->with('success', 'Wordlist created successfully!');
     }
 
     

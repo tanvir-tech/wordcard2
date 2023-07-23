@@ -22,6 +22,14 @@ Route::get('/wordlists', [WordlistController::class, 'index']);
 
 
 // admin 
+Route::get('/admin', function () {
+    return view('backend/admin-dashboard');
+});
+Route::get('/newwordlist', function () {
+    return view('backend/newwordlist');
+});
+Route::post('/newwordlist', [WordlistController::class, 'createwordlist']);
+
 Route::get('/createwordlist', function () {
     $wordlists = Wordlist::all();
     return view('backend/createwordlist', compact('wordlists'));
